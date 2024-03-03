@@ -1,0 +1,14 @@
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+def check_prime_in_sequence(sequence):
+    prime_numbers = [num for num in sequence if is_prime(num)]
+    return prime_numbers
+
+prime_fibonacci_nums = check_prime_in_sequence(fibonacci_sequence)
+print(f"Prime numbers in the Fibonacci sequence: {prime_fibonacci_nums}")
